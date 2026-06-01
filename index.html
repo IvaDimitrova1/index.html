@@ -316,32 +316,23 @@
 
 
 
-/* تنسيق شريط الحقوق */
-#footer {
+#footer, #foter {
+    /* 1. إرجاع العنصر للترتيب الطبيعي للموقع ومنعه من الطفو */
+    position: relative !important; 
+    bottom: auto !important;
+    left: auto !important;
+    
+    /* 2. تنسيق الأبعاد والمظهر */
     width: 100%;
-    background-color: #8B2626; /* اللون الأحمر الداكن الموجود في صورتك */
+    background-color: #8B2626; /* اللون الأحمر الداكن */
     color: #000000;
     text-align: center;
     padding: 15px 0;
     
-    /* هذا السطر يمنع التداخل ويجعل الشريط يظهر بعد المحتوى الطبيعي للموقع */
+    /* 3. لضمان عدم تداخله مع أي عناصر عائمة (Float) */
     clear: both; 
-    position: relative; 
+    margin-top: 40px; /* مسافة أمان تفصله عن آخر صورة فوقه */
 }
-
-/* نصيحة إضافية للموقع ككل لضمان عدم التداخل */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* تأكد أن المحتوى الأساسي يدفع الحقوق للأسفل دائماً */
-main, .content {
-    flex: 1;
-    padding-bottom: 40px; /* مسافة أمان إضافية قبل الحقوق */
-}
-
 
 
 
