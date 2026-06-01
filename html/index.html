@@ -316,25 +316,31 @@
 
 
 
-#foter {
- position: fixed;
- bottom: 0;
-left: 0;
-width: 100%;
-background: rgba(122, 4, 4, 0.8);
-color: rgb(2, 0, 0);
-text-align: center;
- font-size: 1.0em;
-padding: 10px 0;
-z-index: 100;
- backdrop-filter: blur(4px);
-}
-#foter p {
-  margin: 0;
+/* تنسيق شريط الحقوق */
+#footer {
+    width: 100%;
+    background-color: #8B2626; /* اللون الأحمر الداكن الموجود في صورتك */
+    color: #000000;
+    text-align: center;
+    padding: 15px 0;
+    
+    /* هذا السطر يمنع التداخل ويجعل الشريط يظهر بعد المحتوى الطبيعي للموقع */
+    clear: both; 
+    position: relative; 
 }
 
+/* نصيحة إضافية للموقع ككل لضمان عدم التداخل */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-
+/* تأكد أن المحتوى الأساسي يدفع الحقوق للأسفل دائماً */
+main, .content {
+    flex: 1;
+    padding-bottom: 40px; /* مسافة أمان إضافية قبل الحقوق */
+}
 
 
 
@@ -905,9 +911,9 @@ function backHome() {
 
 </script>
 
-
-<foter id="foter">
-    <p> Urheberrecht © 2026 Iva Dimitrova. Alle Rechte vorbehalten </p>
+<footer id="footer">
+    <p>Urheberrecht © 2026 Iva Dimitrova. Alle Rechte vorbehalten</p>
+</footer>
 
 </foter>
 
